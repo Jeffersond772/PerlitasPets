@@ -2,186 +2,173 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="PerlitasPets - Amor y cuidado para tu mascota. Encuentra todos nuestros enlaces oficiales.">
-<title>PerlitasPets | Enlaces Oficiales</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-    --bg-main: rgba(255,255,255,0.94);
-    --primary:#c2185b;
-    --secondary:#666;
-    --shadow:0 25px 50px rgba(0,0,0,0.25);
-}
-
-/* 🌙 MODO OSCURO */
-@media (prefers-color-scheme: dark){
-    :root{
-        --bg-main: rgba(18,18,18,0.95);
-        --primary:#ff7aa8;
-        --secondary:#ccc;
-        --shadow:0 25px 50px rgba(0,0,0,0.6);
-    }
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:'Poppins', sans-serif;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-        linear-gradient(
-            rgba(255,130,170,0.75),
-            rgba(255,190,210,0.85)
-        ),
-        url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-}
-
-.container{
-    background:var(--bg-main);
-    width:100%;
-    max-width:420px;
-    padding:35px 28px;
-    border-radius:28px;
-    text-align:center;
-    box-shadow:var(--shadow);
-    backdrop-filter:blur(10px);
-    animation:fadeIn 0.8s ease;
-}
-
-.logo{
-    width:160px;
-    margin-bottom:15px;
-    transition:transform 0.4s ease;
-}
-
-.logo:hover{
-    transform:scale(1.05);
-}
-
-h1{
-    color:var(--primary);
-    font-size:20px;
-    font-weight:600;
-    margin-bottom:25px;
-}
-
-.link{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    color:#fff;
-    padding:14px;
-    margin:12px 0;
-    border-radius:50px;
-    font-weight:500;
-    transition:all 0.3s ease;
-    box-shadow:0 8px 18px rgba(0,0,0,0.2);
-}
-
-.link:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 28px rgba(0,0,0,0.3);
-}
-
-/* Colores simplificados y más elegantes */
-.whatsapp{background:#25D366;}
-.instagram{background:#d62976;}
-.facebook{background:#1877f2;}
-.tiktok{background:#111;}
-.web{background:#c2185b;}
-
-.footer{
-    margin-top:22px;
-    font-size:12px;
-    color:var(--secondary);
-}
-
-/* Animación */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perlitas Pet's | Veterinaria, cuidos, peceras y peluquería canina</title>
+<meta name="description" content="Perlitas Pet's: veterinaria, venta de cuidos, peceras y peluquería canina. Reserva tu cita por WhatsApp.">
+<meta name="theme-color" content="#14091A">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"PetStore","name":"Perlitas Pet's","image":"img/logo.png",
+ "telephone":"+573217883279","geo":{"@type":"GeoCoordinates","latitude":7.8822378,"longitude":-76.6334284},
+ "hasMap":"https://maps.app.goo.gl/RCwkvM2z5Msp8FVj8",
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"16:00"}],
+ "sameAs":["https://www.facebook.com/share/1f5rPEPikU/","https://www.instagram.com/perlitaspets_tv","https://www.instagram.com/petsperlitas","https://www.tiktok.com/@perlitaspetst"]}
+</script>
 </head>
-
 <body>
 
-<div class="container">
+<header>
+  <div class="wrap bar">
+    <a href="#inicio" class="logo" aria-label="Perlitas Pet's, inicio"><img src="img/logo.png" alt="Perlitas Pet's" width="100" height="46"></a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav aria-label="Principal">
+      <ul id="menu">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#visitanos">Visítanos</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a class="btn sm" href="#reserva">Reservar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <img src="logo.png" alt="Logo PerlitasPets" class="logo">
-
-    <h1>Todo para tu mascota 🐾</h1>
-
-    <a class="link whatsapp"
-       href="https://wa.me/573235960471"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="WhatsApp Peluquería">
-        🐶 WhatsApp Peluquería
-    </a>
-
-    <a class="link whatsapp"
-       href="https://wa.me/573217883279"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="WhatsApp Ventas">
-        🛒 WhatsApp Ventas
-    </a>
-
-    <a class="link instagram"
-       href="https://www.instagram.com/perlitaspets_tv"
-       target="_blank"
-       rel="noopener noreferrer">
-        📸 Instagram TV
-    </a>
-
-    <a class="link instagram"
-       href="https://www.instagram.com/petsperlitas"
-       target="_blank"
-       rel="noopener noreferrer">
-        📸 Instagram Oficial
-    </a>
-
-    <a class="link facebook"
-       href="https://www.facebook.com/share/1DKZZaq5RS/"
-       target="_blank"
-       rel="noopener noreferrer">
-        📘 Facebook
-    </a>
-
-    <a class="link tiktok"
-       href="https://www.tiktok.com/@perlitaspetst"
-       target="_blank"
-       rel="noopener noreferrer">
-        🎵 TikTok
-    </a>
-
-    <a class="link web"
-       href="https://67edaf1524967.amawebs.com/"
-       target="_blank"
-       rel="noopener noreferrer">
-        🌐 Página Web
-    </a>
-
-    <div class="footer">
-        © 2026 PerlitasPets · Amor y cuidado para tu mascota
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hgrid">
+    <div>
+      <p class="eyebrow">Veterinaria · Cuidos · Peceras · Peluquería canina</p>
+      <h1>Cuidado profesional para quienes más quieres</h1>
+      <p class="lead">Todo lo que tu mascota necesita, atendido por un equipo cercano y en un solo lugar.</p>
+      <div class="cta">
+        <a class="btn" href="#reserva">Reservar cita</a>
+        <a class="btn ghost" href="https://maps.app.goo.gl/RCwkvM2z5Msp8FVj8" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+      <p class="estado" id="estado" aria-live="polite"></p>
     </div>
+    <div class="mark"><img src="img/logo.png" alt="Logo de Perlitas Pet's" width="460" height="213"></div>
+  </div>
+</section>
 
+<section id="servicios">
+  <div class="wrap">
+    <p class="kicker">Servicios</p>
+    <h2>Todo para el bienestar de tu mascota</h2>
+    <div class="cards">
+      <article class="card">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></span>
+        <h3>Veterinaria</h3><p>Consulta, vacunación y orientación para el cuidado de tu mascota.</p>
+        <a class="more" data-wa="vet" href="#">Consultar por WhatsApp →</a>
+      </article>
+      <article class="card">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 13H5zM9 8a3 3 0 016 0"/></svg></span>
+        <h3>Cuidos y alimentos</h3><p>Alimentación y productos para perros, gatos y otras mascotas.</p>
+        <a class="more" data-wa="vet" href="#">Consultar por WhatsApp →</a>
+      </article>
+      <article class="card">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M2 12c3-5 9-6 13-2l5-3v10l-5-3c-4 4-10 3-13-2z"/><circle cx="8" cy="11" r=".8"/></svg></span>
+        <h3>Peceras</h3><p>Peces, acuarios y asesoría para montar y cuidar tu pecera.</p>
+        <a class="more" data-wa="vet" href="#">Consultar por WhatsApp →</a>
+      </article>
+      <article class="card">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8L20 19M8.5 16L20 5"/></svg></span>
+        <h3>Peluquería canina</h3><p>Baño, corte y arreglo para que tu perro luzca y se sienta bien.</p>
+        <a class="more" data-wa="pelu" href="#">Reservar turno →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="alt">
+  <div class="wrap">
+    <p class="kicker">Galería</p>
+    <h2>Mascotas felices, día a día</h2>
+    <p class="sub">Nuestras publicaciones más recientes, directamente de nuestras redes.</p>
+    <div id="feed"></div>
+    <div id="feedFallback" class="soc">
+      <a href="https://www.instagram.com/petsperlitas" target="_blank" rel="noopener"><b>Instagram</b><span>@petsperlitas</span></a>
+      <a href="https://www.instagram.com/perlitaspets_tv" target="_blank" rel="noopener"><b>Instagram</b><span>@perlitaspets_tv</span></a>
+      <a href="https://www.facebook.com/share/1f5rPEPikU/" target="_blank" rel="noopener"><b>Facebook</b><span>Perlitas Pet's</span></a>
+      <a href="https://www.tiktok.com/@perlitaspetst" target="_blank" rel="noopener"><b>TikTok</b><span>@perlitaspetst</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="visitanos">
+  <div class="wrap">
+    <p class="kicker">Visítanos</p>
+    <h2>Te esperamos</h2>
+    <div class="vgrid">
+      <iframe title="Ubicación de Perlitas Pet's en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=7.8822378,-76.6334284&z=17&output=embed"></iframe>
+      <div class="info">
+        <h3>Horario</h3>
+        <table>
+          <tr><td>Lunes a sábado</td><td>8:00 a. m. – 7:00 p. m.</td></tr>
+          <tr><td>Domingos y lunes festivos</td><td>9:00 a. m. – 4:00 p. m.</td></tr>
+        </table>
+        <h3>Contacto</h3>
+        <p>Veterinaria, cuidos y peceras<br><a href="tel:+573217883279"><b>321 788 3279</b></a></p>
+        <p>Peluquería canina<br><a href="tel:+573235960471"><b>323 596 0471</b></a></p>
+        <a class="btn" href="https://maps.app.goo.gl/RCwkvM2z5Msp8FVj8" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reserva" class="dark">
+  <div class="wrap rgrid">
+    <div>
+      <p class="kicker">Reservas</p>
+      <h2>Agenda tu cita</h2>
+      <p class="lead">Cuéntanos qué necesitas y te confirmamos por WhatsApp.</p>
+    </div>
+    <form id="form">
+      <label>Servicio
+        <select id="srv"><option>Veterinaria</option><option>Peluquería canina</option><option>Peceras</option><option>Cuidos y alimentos</option></select>
+      </label>
+      <div class="row">
+        <label>Tu nombre<input id="nom" required autocomplete="name"></label>
+        <label>Nombre de la mascota<input id="mas" required></label>
+      </div>
+      <div class="row">
+        <label>Fecha preferida<input type="date" id="fec" required></label>
+        <label>Franja<select id="fra"><option>mañana</option><option>tarde</option></select></label>
+      </div>
+      <button class="btn" type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap narrow">
+    <p class="kicker">Preguntas frecuentes</p>
+    <h2>Resolvemos tus dudas</h2>
+    <details><summary>¿Cómo reservo una cita?</summary><p>Completa el formulario de esta página o escríbenos por WhatsApp; te confirmamos la disponibilidad.</p></details>
+    <details><summary>¿Cuál es el horario de atención?</summary><p>De lunes a sábado de 8:00 a. m. a 7:00 p. m., y domingos y lunes festivos de 9:00 a. m. a 4:00 p. m.</p></details>
+    <details><summary>¿Cómo contacto a la veterinaria y a la peluquería?</summary><p>Veterinaria, cuidos y peceras: 321 788 3279. Peluquería canina: 323 596 0471.</p></details>
+    <details><summary>¿Dónde están ubicados?</summary><p>Encuentra el mapa en la sección “Visítanos” o ábrelo directamente en Google Maps.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <img src="img/logo.png" alt="Perlitas Pet's" width="120" height="55">
+    <p>© 2026 Perlitas Pet's. Todos los derechos reservados.</p>
+    <p class="fsoc"><a href="https://www.facebook.com/share/1f5rPEPikU/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/petsperlitas" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@perlitaspetst" target="_blank" rel="noopener">TikTok</a></p>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a data-wa="vet" href="#">Veterinaria</a><a data-wa="pelu" href="#">Peluquería</a>
 </div>
 
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
