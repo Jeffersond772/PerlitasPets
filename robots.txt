@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://perlitaspets.jdurangotabares.workers.dev/sitemap.xml
