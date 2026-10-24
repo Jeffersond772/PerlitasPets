@@ -86,3 +86,11 @@ document.getElementById('form').onsubmit = e => {
     : `Hola Perlitas Pet's, soy ${nom.value}. Quiero consultar por ${srv.value} (mi mascota: ${mas.value}). Pasaría el ${fec.value}, en la ${fra.value}.`;
   window.open(wa(msg, pelu ? CONFIG.WA_PELU : CONFIG.WA_VET), '_blank', 'noopener');
 };
+
+
+// ---- Compartir el sitio ----
+document.getElementById('share').onclick = async () => {
+  const d = { title: "Perlitas Pet's", text: "Mira Perlitas Pet's: tienda de mascotas, peceras y peluquería canina.", url: location.href.split('#')[0] };
+  if (navigator.share) { try { await navigator.share(d); } catch {} }
+  else window.open(`https://wa.me/?text=${encodeURIComponent(d.text + ' ' + d.url)}`, '_blank', 'noopener');
+};

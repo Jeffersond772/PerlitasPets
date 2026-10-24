@@ -36,10 +36,11 @@
 <header>
   <div class="wrap bar">
     <a href="#inicio" class="logo" aria-label="Perlitas Pet's, inicio"><img src="img/logo-sm.webp" alt="Perlitas Pet's" width="100" height="46"></a>
-    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav aria-label="Principal">
       <ul id="menu">
-        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#servicios">Servicios</a></li>
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#visitanos">Visítanos</a></li>
         <li><a href="#faq">Preguntas</a></li>
@@ -66,6 +67,19 @@
   </div>
 </section>
 
+<section id="nosotros" class="alt">
+  <div class="wrap ngrid">
+    <div>
+      <p class="kicker">Sobre nosotros</p>
+      <h2>10 años cuidando a tu mascota</h2>
+      <p class="lead2">Llevamos 10 años acompañando a las mascotas y a sus familias. Nos distingue estar siempre al día con la moda actual, y algunos accesorios los fabricamos nosotros mismos.</p>
+<ul class="tags"><li>Estilos de corte y peluquería</li><li>Ropa y accesorios</li><li>Accesorios de fabricación propia</li></ul>
+      <a class="btn" href="#reserva">Escríbenos</a>
+    </div>
+    <div class="badge10"><b>10</b><span>años de experiencia</span><em>Siempre a la moda</em></div>
+  </div>
+</section>
+
 <section id="servicios">
   <div class="wrap">
     <p class="kicker">Servicios</p>
@@ -78,7 +92,7 @@
       </article>
       <article class="card">
         <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg></span>
-        <h3>Accesorios y aseo</h3><p>Accesorios y productos de aseo e higiene para el día a día.</p>
+        <h3>Accesorios, ropa y aseo</h3><p>Ropa, accesorios (algunos de fabricación propia) y productos de aseo e higiene.</p>
         <a class="more" data-wa="vet" href="https://wa.me/573217883279">Consultar por WhatsApp →</a>
       </article>
       <article class="card">
@@ -141,7 +155,7 @@
     </div>
     <form id="form">
       <label>Servicio
-        <select id="srv"><option>Peluquería canina</option><option>Cuidos y alimentos</option><option>Accesorios y aseo</option><option>Peceras</option></select>
+        <select id="srv"><option>Peluquería canina</option><option>Cuidos y alimentos</option><option>Accesorios, ropa y aseo</option><option>Peceras</option></select>
       </label>
       <div class="row">
         <label>Tu nombre<input id="nom" required autocomplete="name"></label>
@@ -160,7 +174,7 @@
   <div class="wrap narrow">
     <p class="kicker">Preguntas frecuentes</p>
     <h2>Resolvemos tus dudas</h2>
-    <details><summary>¿Qué productos y servicios ofrecen?</summary><p>Cuidos y alimentos, accesorios, productos de aseo para mascotas, peceras y peluquería canina.</p></details>
+    <details><summary>¿Qué productos y servicios ofrecen?</summary><p>Cuidos y alimentos, accesorios y ropa (algunos de fabricación propia), productos de aseo para mascotas, peceras y peluquería canina.</p></details>
     <details><summary>¿Cómo reservo el turno de peluquería?</summary><p>Completa el formulario de esta página o escríbenos por WhatsApp; te confirmamos la disponibilidad.</p></details>
     <details><summary>¿Cuál es el horario de atención?</summary><p>De lunes a sábado de 8:00 a. m. a 7:00 p. m., y domingos y lunes festivos de 9:00 a. m. a 4:00 p. m.</p></details>
     <details><summary>¿Cómo los contacto?</summary><p>Tienda, cuidos y peceras: 321 788 3279. Peluquería canina: 323 596 0471.</p></details>
@@ -173,7 +187,7 @@
   <div class="wrap fgrid">
     <img src="img/logo-sm.webp" alt="Perlitas Pet's" width="120" height="55" loading="lazy">
     <p>© 2026 Perlitas Pet's. Todos los derechos reservados.</p>
-    <p class="fsoc"><a href="https://www.facebook.com/share/1f5rPEPikU/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/petsperlitas" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@perlitaspetst" target="_blank" rel="noopener">TikTok</a></p>
+    <p class="fsoc"><a href="https://www.facebook.com/share/1f5rPEPikU/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/petsperlitas" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@perlitaspetst" target="_blank" rel="noopener">TikTok</a> <button class="share" id="share" type="button">Compartir</button></p>
   </div>
 </footer>
 
