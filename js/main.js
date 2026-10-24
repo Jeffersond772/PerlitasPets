@@ -1,7 +1,7 @@
 const wa = (t, n) => `https://wa.me/${n}?text=${encodeURIComponent(t)}`;
 const NUM = { vet: CONFIG.WA_VET, pelu: CONFIG.WA_PELU };
 const SALUDO = {
-  vet: "Hola Perlitas Pet's, quiero información de veterinaria, cuidos o peceras.",
+  vet: "Hola Perlitas Pet's, quiero información de la tienda, cuidos, accesorios o peceras.",
   pelu: "Hola Perlitas Pet's, quiero información de la peluquería canina."
 };
 document.querySelectorAll('[data-wa]').forEach(a => {
@@ -42,12 +42,37 @@ function estado() {
 }
 estado(); setInterval(estado, 60000);
 
-// ---- Galería automática (Instagram / Facebook) ----
-const feed = document.getElementById('feed');
-if (CONFIG.FEED_URL || CONFIG.FB_PAGE) {
-  document.getElementById('feedFallback').hidden = true;
-  if (CONFIG.FEED_URL) feed.insertAdjacentHTML('beforeend', `<iframe class="ig" src="${CONFIG.FEED_URL}" title="Últimas publicaciones de Instagram" loading="lazy" scrolling="no"></iframe>`);
-  if (CONFIG.FB_PAGE) feed.insertAdjacentHTML('beforeend', `<iframe class="fb" src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(CONFIG.FB_PAGE)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true" title="Publicaciones de Facebook" loading="lazy" scrolling="no"></iframe>`);
+// ---- Galería automática de Instagram (con fecha y hora) ----
+const feed = document.getElementById('feed'), fallback = document.getElementById('feedFallback');
+const fmt = new Intl.DateTimeFormat('es-CO', { dateStyle: 'long', timeStyle: 'short', timeZone: 'America/Bogota' });
+function postCard(p) {
+  const a = document.createElement('a');
+  a.className = 'post'; a.href = p.permalink || '#'; a.target = '_blank'; a.rel = 'noopener';
+  const img = document.createElement('img');
+  img.src = (p.sizes && p.sizes.medium && p.sizes.medium.mediaUrl) || p.thumbnailUrl || p.mediaUrl;
+  img.alt = (p.caption || "Publicación de Perlitas Pet's").slice(0, 100); img.loading = 'lazy';
+  const info = document.createElement('div'); info.className = 'pinfo';
+  const t = document.createElement('time');
+  const d = new Date(String(p.timestamp).replace(/([+-]\d\d)(\d\d)$/, '$1:$2'));
+  t.dateTime = d.toISOString(); t.textContent = fmt.format(d);
+  const c = document.createElement('p'); c.textContent = (p.caption || '').slice(0, 110);
+  info.append(t, c); a.append(img, info); return a;
+}
+if (CONFIG.BEHOLD_URL) {
+  fetch(CONFIG.BEHOLD_URL).then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => {
+      const posts = (d.posts || []).slice(0, 6); if (!posts.length) return;
+      const g = document.createElement('div'); g.className = 'posts';
+      posts.forEach(p => g.append(postCard(p)));
+      feed.append(g); fallback.hidden = true;
+    }).catch(() => {}); // si falla, quedan visibles los enlaces a las redes
+} else if (CONFIG.FEED_URL) {
+  fallback.hidden = true;
+  feed.insertAdjacentHTML('beforeend', `<iframe class="ig" src="${CONFIG.FEED_URL}" title="Últimas publicaciones de Instagram" loading="lazy" scrolling="no"></iframe>`);
+}
+if (CONFIG.FB_PAGE) {
+  fallback.hidden = true;
+  feed.insertAdjacentHTML('beforeend', `<iframe class="fb" src="https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(CONFIG.FB_PAGE)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true" title="Publicaciones de Facebook" loading="lazy" scrolling="no"></iframe>`);
 }
 
 // ---- Reserva → WhatsApp (según el servicio) ----
@@ -56,6 +81,8 @@ fec.min = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' })
 document.getElementById('form').onsubmit = e => {
   e.preventDefault();
   const pelu = srv.value.startsWith('Peluquer');
-  const msg = `Hola Perlitas Pet's, soy ${nom.value}. Quiero reservar ${srv.value} para ${mas.value} el ${fec.value}, en la ${fra.value}.`;
+  const msg = pelu
+    ? `Hola Perlitas Pet's, soy ${nom.value}. Quiero reservar turno de peluquería canina para ${mas.value} el ${fec.value}, en la ${fra.value}.`
+    : `Hola Perlitas Pet's, soy ${nom.value}. Quiero consultar por ${srv.value} (mi mascota: ${mas.value}). Pasaría el ${fec.value}, en la ${fra.value}.`;
   window.open(wa(msg, pelu ? CONFIG.WA_PELU : CONFIG.WA_VET), '_blank', 'noopener');
 };
