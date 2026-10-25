@@ -8,4 +8,10 @@ const CONFIG = {
   // 2) En Behold: conecta la cuenta, "Add feed" > JSON, y copia la URL (https://feeds.behold.so/...).
   // 3) Pégala aquí. En Behold agrega el dominio del sitio en "allowed domains".
   BEHOLD_URL: "https://feeds.behold.so/YX0jUttACt2XHKUYsJpx"
+
+  // AVISO ESPECIAL (opcional): aparece como una franja dorada arriba del sitio.
+  // Ej: AVISO: "Hoy abrimos hasta las 2 p. m." — déjalo vacío ("") para ocultarlo.
+  // AVISO_HASTA: último día en que se muestra, formato AAAA-MM-DD (vacío = sin fecha límite).
+  AVISO: "",
+  AVISO_HASTA: "",
 };

@@ -94,3 +94,11 @@ document.getElementById('share').onclick = async () => {
   if (navigator.share) { try { await navigator.share(d); } catch {} }
   else window.open(`https://wa.me/?text=${encodeURIComponent(d.text + ' ' + d.url)}`, '_blank', 'noopener');
 };
+
+
+// ---- Aviso especial (se configura en config.js) ----
+(function () {
+  const el = document.getElementById('aviso');
+  const hoy = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Bogota' });
+  if (CONFIG.AVISO && (!CONFIG.AVISO_HASTA || hoy <= CONFIG.AVISO_HASTA)) { el.textContent = CONFIG.AVISO; el.hidden = false; }
+})();

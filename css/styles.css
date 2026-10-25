@@ -192,3 +192,6 @@ footer{background:linear-gradient(180deg,#14091A,#0B0410);border-top:1px solid r
 .info .btn{margin:0 10px 10px 0}
 @media(max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.why{grid-template-columns:1fr}}
+
+
+.aviso{background:linear-gradient(135deg,#B8892B,#F2D98A 50%,#B8892B);color:#14091A;text-align:center;padding:9px 16px;font-weight:600;font-size:.95rem}
