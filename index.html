@@ -114,7 +114,17 @@
   </div>
 </section>
 
-<section id="galeria" class="alt">
+<section id="tienda" class="alt">
+  <div class="wrap">
+    <p class="kicker">Conoce la tienda</p>
+    <h2>Un vistazo por dentro</h2>
+    <p class="sub">Toca una foto para verla en grande.</p>
+    <div class="cats" id="cats"></div>
+    <div class="fotos" id="fgrid"></div>
+  </div>
+</section>
+
+<section id="galeria">
   <div class="wrap">
     <p class="kicker">Galería</p>
     <h2>Mascotas felices, día a día</h2>
@@ -215,7 +225,15 @@
 <a data-wa="vet" href="https://wa.me/573217883279">Tienda</a><a data-wa="pelu" href="https://wa.me/573235960471">Peluquería</a>
 </div>
 
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button type="button" class="lbb lbx" data-a="x" aria-label="Cerrar">×</button>
+  <button type="button" class="lbb lbp" data-a="p" aria-label="Foto anterior">‹</button>
+  <div class="lbc"><img alt=""><p></p></div>
+  <button type="button" class="lbb lbn" data-a="n" aria-label="Foto siguiente">›</button>
+</div>
+
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
+<script src="js/tienda.js"></script>
 </body>
 </html>
