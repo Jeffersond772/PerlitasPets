@@ -1,7 +1,8 @@
 // ===== Configuración del sitio (edita solo este archivo) =====
 const CONFIG = {
-  WA_VET:  "573217883279",   // Tienda: cuidos, accesorios, aseo y peceras
+  WA_VET:  "573217883279",   // Tienda: cuidos, accesorios y aseo
   WA_PELU: "573235960471",   // Peluquería canina
+  WA_PEC:  "573147933080",   // Peceras y acuarios
 
   // GALERÍA AUTOMÁTICA DE INSTAGRAM (con fecha y hora de cada publicación):
   // 1) Pasa la cuenta de Instagram a "profesional" (Empresa o Creador) y créala en behold.so.

@@ -4,7 +4,9 @@ FN:Perlitas Pet's
 ORG:Perlitas Pet's
 TITLE:Tienda de mascotas y peluquería canina
 item1.TEL;TYPE=WORK,VOICE:+573217883279
-item1.X-ABLabel:Tienda - cuidos y peceras
+item1.X-ABLabel:Tienda y cuidos
 item2.TEL;TYPE=WORK,VOICE:+573235960471
 item2.X-ABLabel:Peluquería canina
+item3.TEL;TYPE=WORK,VOICE:+573147933080
+item3.X-ABLabel:Peceras y acuarios
 END:VCARD

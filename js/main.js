@@ -1,8 +1,9 @@
 const wa = (t, n) => `https://wa.me/${n}?text=${encodeURIComponent(t)}`;
-const NUM = { vet: CONFIG.WA_VET, pelu: CONFIG.WA_PELU };
+const NUM = { vet: CONFIG.WA_VET, pelu: CONFIG.WA_PELU, pec: CONFIG.WA_PEC };
 const SALUDO = {
   vet: "Hola Perlitas Pet's, quiero información de la tienda, cuidos, accesorios o peceras.",
-  pelu: "Hola Perlitas Pet's, quiero información de la peluquería canina."
+  pelu: "Hola Perlitas Pet's, quiero información de la peluquería canina.",
+pec: "Hola Perlitas Pet's, quiero información de peceras y acuarios."
 };
 document.querySelectorAll('[data-wa]').forEach(a => {
   const k = a.dataset.wa;
@@ -84,7 +85,8 @@ document.getElementById('form').onsubmit = e => {
   const msg = pelu
     ? `Hola Perlitas Pet's, soy ${nom.value}. Quiero reservar turno de peluquería canina para ${mas.value} el ${fec.value}, en la ${fra.value}.`
     : `Hola Perlitas Pet's, soy ${nom.value}. Quiero consultar por ${srv.value} (mi mascota: ${mas.value}). Pasaría el ${fec.value}, en la ${fra.value}.`;
-  window.open(wa(msg, pelu ? CONFIG.WA_PELU : CONFIG.WA_VET), '_blank', 'noopener');
+  const num = pelu ? CONFIG.WA_PELU : srv.value === 'Peceras' ? CONFIG.WA_PEC : CONFIG.WA_VET;
+window.open(wa(msg, num), '_blank', 'noopener');
 };
 
 
