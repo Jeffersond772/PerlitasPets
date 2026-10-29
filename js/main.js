@@ -1,7 +1,7 @@
 const wa = (t, n) => `https://wa.me/${n}?text=${encodeURIComponent(t)}`;
 const NUM = { vet: CONFIG.WA_VET, pelu: CONFIG.WA_PELU, pec: CONFIG.WA_PEC };
 const SALUDO = {
-  vet: "Hola Perlitas Pet's, quiero información de la tienda, cuidos, accesorios o peceras.",
+  vet: "Hola Perlitas Pet's, quiero información de la tienda, veterinaria o guardería.",
   pelu: "Hola Perlitas Pet's, quiero información de la peluquería canina.",
 pec: "Hola Perlitas Pet's, quiero información de peceras y acuarios."
 };
@@ -92,7 +92,7 @@ window.open(wa(msg, num), '_blank', 'noopener');
 
 // ---- Compartir el sitio ----
 document.getElementById('share').onclick = async () => {
-  const d = { title: "Perlitas Pet's", text: "Mira Perlitas Pet's: tienda de mascotas, peceras y peluquería canina.", url: location.href.split('#')[0] };
+  const d = { title: "Perlitas Pet's", text: "Mira Perlitas Pet's: tienda de mascotas, veterinaria, peceras y peluquería canina.", url: location.href.split('#')[0] };
   if (navigator.share) { try { await navigator.share(d); } catch {} }
   else window.open(`https://wa.me/?text=${encodeURIComponent(d.text + ' ' + d.url)}`, '_blank', 'noopener');
 };

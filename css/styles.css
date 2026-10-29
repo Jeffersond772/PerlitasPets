@@ -215,3 +215,9 @@ footer{background:linear-gradient(180deg,#14091A,#0B0410);border-top:1px solid r
 
 @media(max-width:760px){.mbar{grid-template-columns:repeat(3,1fr)}.mbar a{font-size:.95rem}}
 .aviso{background:linear-gradient(135deg,#B8892B,#F2D98A 50%,#B8892B);color:#14091A;text-align:center;padding:9px 16px;font-weight:600;font-size:.95rem}
+
+
+/* Servicios: 6 tarjetas */
+.cards{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
